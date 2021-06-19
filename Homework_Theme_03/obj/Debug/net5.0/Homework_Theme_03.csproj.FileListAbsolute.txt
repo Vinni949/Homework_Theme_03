@@ -1,0 +1,16 @@
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.exe
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.deps.json
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.runtimeconfig.json
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.runtimeconfig.dev.json
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.dll
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\ref\Homework_Theme_03.dll
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\bin\Debug\net5.0\Homework_Theme_03.pdb
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.csproj.AssemblyReference.cache
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.AssemblyInfoInputs.cache
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.AssemblyInfo.cs
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.csproj.CoreCompileInputs.cache
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.dll
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\ref\Homework_Theme_03.dll
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.pdb
+C:\Users\pumba\source\repos\Homework_Theme_03\Homework_Theme_03\obj\Debug\net5.0\Homework_Theme_03.genruntimeconfig.cache
