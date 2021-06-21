@@ -74,7 +74,7 @@ namespace Homework_Theme_03
             while (i)
             {
                 Console.WriteLine("Выберите режим игры:");
-                Console.WriteLine("1-игра против ИИ, 2-игра двух играков,3-игра трех играков,0-выход");
+                Console.WriteLine("1-игра против ИИ, 2-игра двух играков, 0-выход");
                 int a = Convert.ToInt32(Console.ReadLine());
                 switch (a)
                 {
@@ -84,9 +84,7 @@ namespace Homework_Theme_03
                     case 2:
                         UserVSuser();
                         break;
-                    case 3:
-                        UserVSuserVSuser();
-                        break;
+
                     case 0:
                         i = false;
                         break;
@@ -101,111 +99,70 @@ namespace Homework_Theme_03
                 string user1 = Console.ReadLine();
                 Console.Write("Второй игрок компьютер!");
                 string user2 = "Компьютер";
-                    Console.WriteLine($"Играют {user1} и {user2}!");
-                    int rand = Complexity();
-                bool f = true;
-                int m;
+                Console.WriteLine($"Играют {user1} и {user2}!");
+                int rand = Complexity();
                 while (rand > 0)
-                    {
+                {
                     Console.WriteLine(rand);
-                    Console.WriteLine("{0}, ваш ход", f ? user1 : user2);
-                    if (f)
+                    Random random = new Random();
+                    int rdn = random.Next(1, 4);
+                    Console.WriteLine("введите число от 1 до 4:");
+                    if (rand - rdn != 0)
                     {
-                        m = int.Parse(Console.ReadLine());
-                        while (!(m >= 1 && m <= 4))
-                        {
-                            Console.WriteLine("Некорректный ход! {0}, повторите ввод", f ? user1 : user2);
-                            m = int.Parse(Console.ReadLine());
-                        }
+                        rand -= rdn;
                     }
-                    rand -= m;
-                    f = !f;
-               } 
+                    else
+                    {
+                        Console.WriteLine("Компьютер выйграл!");
+                        break;
+                    }
+                    int userTry = Check();
+                    if (rand - userTry != 0)
+                    {
+                        rand -= userTry; 
+                    }
+                    else 
+                    {
+                        Console.WriteLine("результат не может быть меньше 0, введите другое число");
+                        continue;
+                    }
+
+                }
             }
 
             void UserVSuser()
             {
-                while (true)
+
+
+                Console.Clear();
+                int count = 0;
+                Console.Write("никнейм первого игрока: ");
+                string user1 = Console.ReadLine();
+                Console.Write("никнейм второго игрока: ");
+                string user2 = Console.ReadLine();
+                int rand = Complexity();
+                Console.WriteLine("загадонное число: " + rand);
+                Console.WriteLine("введите число от 1 до 4:");
+                while (rand != 0)
                 {
-                    Console.Clear();
-                    int count = 0;
-                    Console.Write("никнейм первого игрока: ");
-                    string user1 = Console.ReadLine();
-                    Console.Write("никнейм второго игрока: ");
-                    string user2 = Console.ReadLine();
-                    gameNumber=
-                    Console.WriteLine("загадонное число: " + gameNumber);
-                    Console.WriteLine("введите число от 1 до 4:");
-                    while (gameNumber != 0)
+                    Console.WriteLine(count % 2 == 0 ? $"ход игрока {user1}" : $"ход игрока {user2}");
+                    int userTry = Check();
+                    if (userTry == 0)
                     {
-                        Console.WriteLine(count % 2 == 0 ? $"ход игрока {user1}" : $"ход игрока {user2}");
-                        int userTry = Check();
-                        if (gameNumber - userTry < 0)
-                        {
-                            Console.WriteLine("результат не может быть меньше 0, введите другое число");
-                            continue;
-                        }
-                        gameNumber -= userTry;
-                        count++;
-                        Console.WriteLine("осталось: " + gameNumber);
+                        Console.WriteLine("результат не может быть меньше 0, введите другое число");
+                        continue;
                     }
-                    Console.WriteLine(count % 2 != 0 ? $"выиграл игрок {user1}" : $"выиграл игрок {user2}");
-                    Console.WriteLine("чтобы сыграть еще раз нажите пробел");
-                    if (Console.ReadKey().Key != ConsoleKey.Spacebar) break;
+                    rand -= userTry;
+                    count++;
+                    Console.WriteLine("осталось: " + rand);
                 }
+                Console.WriteLine(count % 2 != 0 ? $"выиграл игрок {user1}" : $"выиграл игрок {user2}");
+                Console.WriteLine("чтобы сыграть еще раз нажите пробел");
+
+
 
             }
-            
-            void UserVSuserVSuser()
-            {
-                Console.Clear();
-                Console.Write("Введите ник первого игрока:");
-                string user1 = Console.ReadLine();
-                Console.Write("Введите ник второго игрока:");
-                string user2 = Console.ReadLine();
-                Console.Write("Введите ник третьего игрока:");
-                string user3 = Console.ReadLine();
-                bool i = true;
-                    Console.WriteLine($"Играют {user1} , {user2} и {user3}!");
-                    int rand = Complexity();
-                    while (rand > 0)
-                    {
-                        Console.WriteLine(rand);
-                        Console.Write($"Ход игрока: {user1} \nвведите число от 1 до 4х :");
-                        int us1 = Convert.ToInt16(Console.ReadLine());
-                        if (us1 <= rand)
-                        {
-                            rand -= us1;
-                        }
-                        if (rand <= 0)
-                        {
-                            Console.WriteLine($"{user1} победил!");
-                            break;
-                        }
-                        Console.Write($"Ход игрока: {user2} \nвведите число от 1 до 4х :");
-                        int us2 = Convert.ToInt16(Console.ReadKey());
-                        if (us2 <= rand)
-                        {
-                            rand -= us2;
-                        }
-                        if (rand <= 0)
-                        {
-                            Console.WriteLine($"{user2} победил!");
-                            break;
-                        }
-                        Console.Write($"Ход игрока: {user3} \nвведите число от 1 до 4х :");
-                        int us3 = Convert.ToInt16(Console.ReadLine());
-                        if (us3 <= rand)
-                        {
-                            rand -= us3;
-                        }
-                        if (rand <= 0)
-                        {
-                            Console.WriteLine($"{user3} победил!");
-                            break;
-                        }
-                    }
-            }
+
             int Check()
             {
                 int x;
